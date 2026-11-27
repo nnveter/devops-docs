@@ -44,10 +44,8 @@ jobs:
 
       - name: Add build metadata
         run: |
-          printf 'commit=%s
-' "$GITHUB_SHA" > site/build.txt
-          printf 'run=%s
-' "$GITHUB_RUN_ID" >> site/build.txt
+          printf 'commit=%s\n' "$GITHUB_SHA" > site/build.txt
+          printf 'run=%s\n' "$GITHUB_RUN_ID" >> site/build.txt
           date -u '+built_at=%Y-%m-%dT%H:%M:%SZ' >> site/build.txt
 
       - name: Configure Pages
